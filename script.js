@@ -1,4 +1,7 @@
-//adding current day/time
+
+$(document).ready(function () {
+
+//add current day/time
 var rightNow = moment().format("dddd, MMMM Do");
 $("#currentDay").text(rightNow);
 
@@ -10,16 +13,19 @@ function scheduleEvent() {
     var hour = $("<div class='hour'></div>");
     var timeblock = $("<textarea type='text' id='timeblock'></textarea>");
     var saveBtn = $("<button class='saveBtn' id='saveBtn'>Save</button>");
+    var currentHour = moment().format("HH");
+    var hourBlock = i;
 
-    //add elements in - why are the rows so small??
+
+    //add elements in - why are the columns so small??
     $(".container").append(row);
     row.append(hour);
-    hour.text(moment(i, "h").format("hh a"));
+    //display in 12hr am/pm format
+    hour.text(moment(i,"h").format("hh a"));
     row.append(timeblock);
     row.append(saveBtn);
     //format for past,present,future
-    var currentHour = moment().format("hh");
-    var hourBlock = i;
+    //need 24hr time to compare 
     if (hourBlock > currentHour) {
       timeblock.addClass("future");
     } else if (hourBlock < currentHour) {
@@ -31,7 +37,12 @@ function scheduleEvent() {
 
   //event is saved in local storage
   $(saveBtn).click(function () {
-    localStorage.setItem("event", timeblock);
+    ////????
+    var userEvent = $("#timeblock").val();
+    alert(userEvent)
+console.log(userEvent);
+    //localStorage.setItem("event", );
   });
 }
 scheduleEvent();
+})
