@@ -11,13 +11,13 @@ function scheduleEvent() {
     //variables
     var row = $("<div class='row'></div>");
     var hour = $("<div class='hour'></div>");
-    var timeblock = $("<textarea type='text' id='timeblock'></textarea>");
+    var timeblock = $("<textarea type='text' id='timeblock' class='col-10'></textarea>");
     var saveBtn = $("<button class='saveBtn' id='saveBtn'>Save</button>");
     var currentHour = moment().format("HH");
     var hourBlock = i;
 
 
-    //add elements in - why are the columns so small??
+    //add elements in - YAY fixed column size 
     $(".container").append(row);
     row.append(hour);
     //display in 12hr am/pm format
