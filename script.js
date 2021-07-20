@@ -48,17 +48,16 @@ $(document).ready(function () {
     var buttonid = button.attr("id");
     //split button id to remove 'button' and just get id number to match with timeblock id number
     var timeblockid = buttonid.split("button")[1];
-    console.log(timeblockid);
     //remove 'button'
     var textarea = $("#" + timeblockid);
     //match button id to timeblock id
-    console.log(textarea);
-    //get input from matching timeblock
     var input = textarea.val();
-    console.log(input);
-    //save that string to local storage
+    //get input from matching timeblock
+
     localStorage.setItem("event", input);
-    //store multiple events????????? - not just 1 overriding the others
+    //save that string to local storage
+    //not done:
+    //store multiple events? - not just 1 overriding the others
     //save on refresh
     //read from local storage on page load, if it has value, plug in
   });

@@ -1,7 +1,8 @@
 #daily planner
 
-This is a scheduling tool where you can view the hours in a work day (the current hour will be red, the past gray and the future green), enter an event into the timeblock and save it. 
+https://kjnb-0.github.io/daily-planner/
 
+This is a scheduling tool where you can view the hours in a work day (the current hour will be red, the past gray and the future green), enter an event into the timeblock and save it. 
 
 
 
