@@ -20,7 +20,7 @@ $(document).ready(function () {
       var currentHour = moment().format("HH");
       var hourBlock = i;
 
-      //add elements in - YAY fixed column size
+      //add elements in
       $(".container").append(row);
       row.append(hour);
       //display in 12hr am/pm format
@@ -41,8 +41,6 @@ $(document).ready(function () {
   scheduleEvent();
 
   $(".container").on("click", "button", function () {
-    console.log("testing clicking");
-    console.log(this);
     var button = $(this);
     //find button id
     var buttonid = button.attr("id");
@@ -54,9 +52,9 @@ $(document).ready(function () {
     var input = textarea.val();
     //get input from matching timeblock
 
-    localStorage.setItem("event", input);
+    localStorage.setItem("event", JSON.stringify(input));
     //save that string to local storage
-    //not done:
+    
     //store multiple events? - not just 1 overriding the others
     //save on refresh
     //read from local storage on page load, if it has value, plug in
